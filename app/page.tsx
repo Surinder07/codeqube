@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import AboutUs from "@/components/AboutUs";
 import Projects from "@/components/Projects";
 
-
 export default function Page() {
   return (
     <>
