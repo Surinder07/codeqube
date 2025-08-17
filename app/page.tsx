@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import AboutUs from "@/components/AboutUs";
+import Projects from "@/components/Projects";
 
 
 export default function Page() {
@@ -147,6 +148,32 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+       {/* Project Categories */}
+            <section id="projects" className="mx-auto max-w-7xl px-4 py-20">
+              <div className="mb-8">
+                <h2 className="text-3xl md:text-4xl font-extrabold">Project Categories</h2>
+                <p className="text-slate-300 mt-2 max-w-2xl">Some of the domains where we’ve delivered impactful solutions.</p>
+              </div>
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 text-center">
+                  <h3 className="font-bold text-xl mb-2">🎬 Streaming Apps</h3>
+                  <p className="text-sm text-slate-300">Built scalable video platforms with adaptive streaming, real-time chat, and subscription models.</p>
+                </article>
+                <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 text-center">
+                  <h3 className="font-bold text-xl mb-2">🏦 Banking Projects</h3>
+                  <p className="text-sm text-slate-300">Developed secure, compliant fintech apps including loan processing, payment gateways, and risk engines.</p>
+                </article>
+                <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 text-center">
+                  <h3 className="font-bold text-xl mb-2">🚚 Logistics</h3>
+                  <p className="text-sm text-slate-300">Implemented tracking, route optimization, and warehouse management systems at scale.</p>
+                </article>
+                <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 text-center">
+                  <h3 className="font-bold text-xl mb-2">🍔 Food Delivery</h3>
+                  <p className="text-sm text-slate-300">Launched mobile-first ordering platforms with real-time order tracking, payments, and restaurant dashboards.</p>
+                </article>
+              </div>
+            </section>
 
       {/* Process */}
       <section id="process" className="mx-auto max-w-7xl px-4 py-20">
