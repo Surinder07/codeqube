@@ -40,7 +40,7 @@ export default function Page() {
               <div className="relative rounded-2xl border border-slate-800 bg-slate-900/50 p-4 shadow-2xl">
                 <div className="aspect-[4/3] w-full rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 grid place-items-center">
                   <div className="text-center">
-                    <svg className="mx-auto mb-4" width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 5h16v12H4z" stroke="#38bdf8" strokeWidth="1.2"/><path d="M4 17h16v2H4z" fill="#0ea5e9"/><circle cx="8" cy="9" r="1" fill="#38bdf8"/><rect x="10" y="8" width="8" height="2" fill="#38bdf8"/><rect x="6" y="12" width="12" height="2" fill="#38bdf8"/></svg>
+                    <svg className="mx-auto mb-4" width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 5h16v12H4z" stroke="#38bdf8" strokeWidth="1.2" /><path d="M4 17h16v2H4z" fill="#0ea5e9" /><circle cx="8" cy="9" r="1" fill="#38bdf8" /><rect x="10" y="8" width="8" height="2" fill="#38bdf8" /><rect x="6" y="12" width="12" height="2" fill="#38bdf8" /></svg>
                     <p className="text-sm text-slate-400">Clean, fast, and scalable by default</p>
                   </div>
                 </div>
@@ -74,7 +74,7 @@ export default function Page() {
           <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
             <div className="flex items-center gap-3 mb-3">
               <div className="rounded-xl bg-brand-500/10 p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path dName="M12 6v12M6 12h12"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 6v12M6 12h12" /></svg>
               </div>
               <h3 className="text-xl font-bold">MVP in 4–8 weeks</h3>
             </div>
@@ -88,7 +88,7 @@ export default function Page() {
           <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
             <div className="flex items-center gap-3 mb-3">
               <div className="rounded-xl bg-brand-500/10 p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path dName="M4 6h16M4 12h10M4 18h7"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 6h16M4 12h10M4 18h7" /></svg>
               </div>
               <h3 className="text-xl font-bold">Product Engineering</h3>
             </div>
@@ -102,7 +102,7 @@ export default function Page() {
           <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
             <div className="flex items-center gap-3 mb-3">
               <div className="rounded-xl bg-brand-500/10 p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path dName="M12 3l8 4v6c0 4.418-3.582 8-8 8s-8-3.582-8-8V7l8-4z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3l8 4v6c0 4.418-3.582 8-8 8s-8-3.582-8-8V7l8-4z" /></svg>
               </div>
               <h3 className="text-xl font-bold">Cloud & DevOps</h3>
             </div>
@@ -252,7 +252,7 @@ export default function Page() {
               </div>
               <button className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-5 py-3 font-semibold text-slate-900 hover:bg-brand-400" type="submit">
                 Send message
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M3 12l18-9-9 18-2-7-7-2z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M3 12l18-9-9 18-2-7-7-2z" /></svg>
               </button>
               <p className="text-xs text-slate-500">By submitting, you agree to our privacy policy.</p>
             </div>
