@@ -1,4 +1,6 @@
 import Header from "@/components/Header";
+import AboutUs from "@/components/AboutUs";
+
 
 export default function Page() {
   return (
@@ -218,7 +220,7 @@ export default function Page() {
             <h2 className="text-3xl md:text-4xl font-extrabold">Tell us about your project</h2>
             <p className="text-slate-300 mt-2">Drop a note — we’ll reply within one business day.</p>
             <div className="mt-6 space-y-4 text-slate-300 text-sm">
-              <div className="flex items-center gap-3"><span className="rounded-lg bg-slate-800 p-2">📧</span> <a className="hover:underline" href="mailto:hello@codeqube.io">hello@codeqube.io</a></div>
+              <div className="flex items-center gap-3"><span className="rounded-lg bg-slate-800 p-2">📧</span> <a className="hover:underline" href="mailto:info@codeqube.io">info@codeqube.io</a></div>
               <div className="flex items-center gap-3"><span className="rounded-lg bg-slate-800 p-2">📍</span> Toronto · Remote‑first</div>
             </div>
           </div>
