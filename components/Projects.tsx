@@ -74,7 +74,7 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div key={project.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 overflow-hidden">
+            <div key={project.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-200 overflow-hidden">
               <div className="p-6">
                 <div className="text-4xl mb-4">{project.image}</div>
                 <div className="mb-2">
@@ -143,7 +143,7 @@ export default function Projects() {
               <div key={index} className="text-center p-4 bg-gray-50 rounded-lg hover:bg-yellow-50 transition-colors border border-transparent hover:border-yellow-200">
                 <div className="text-3xl mb-2">{industry.icon}</div>
                 <div className="font-semibold text-gray-900 mb-1">{industry.name}</div>
-                <div className="text-sm text-yellow-600">{industry.count} projects</div>
+                <div className="text-sm text-yellow-500">{industry.count} projects</div>
               </div>
             ))}
           </div>
