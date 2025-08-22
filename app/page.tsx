@@ -148,6 +148,117 @@ export default function Home() {
       </section>
 
       <AboutUs />
+      
+      {/* Team Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Meet Our Leadership Team
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Experienced leaders driving innovation and digital transformation
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            {/* CEO */}
+            <div className="text-center">
+              <div className="relative mb-6">
+                <div className="w-48 h-48 mx-auto bg-gradient-to-br from-yellow-100 to-amber-100 rounded-full flex items-center justify-center border-4 border-yellow-200">
+                  <svg className="w-24 h-24 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-semibold">
+                    CEO
+                  </div>
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Surinder Singh</h3>
+              <p className="text-gray-600 mb-4">Chief Executive Officer</p>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Visionary leader with over 15 years of experience in technology consulting and digital transformation. 
+                Surinder drives CodeQube's strategic direction and ensures we deliver exceptional value to our clients.
+              </p>
+            </div>
+            
+            {/* MD */}
+            <div className="text-center">
+              <div className="relative mb-6">
+                <div className="w-48 h-48 mx-auto bg-gradient-to-br from-amber-100 to-orange-100 rounded-full flex items-center justify-center border-4 border-amber-200">
+                  <svg className="w-24 h-24 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-amber-500 text-black px-3 py-1 rounded-full text-sm font-semibold">
+                    MD
+                  </div>
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Rachna Singh</h3>
+              <p className="text-gray-600 mb-4">Managing Director</p>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Strategic leader overseeing operations and client relationships. Rachna brings extensive expertise 
+                in business development and ensures CodeQube maintains the highest standards of service delivery.
+              </p>
+            </div>
+          </div>
+          
+          {/* Company Values */}
+          <div className="mt-20">
+            <div className="text-center mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Our Core Values
+              </h3>
+              <p className="text-gray-600">
+                The principles that guide everything we do
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center p-6 bg-gray-50 rounded-xl">
+                <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Excellence</h4>
+                <p className="text-gray-600">
+                  We strive for excellence in every project, delivering solutions that exceed expectations.
+                </p>
+              </div>
+              
+              <div className="text-center p-6 bg-gray-50 rounded-xl">
+                <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Innovation</h4>
+                <p className="text-gray-600">
+                  We embrace cutting-edge technologies and creative solutions to solve complex challenges.
+                </p>
+              </div>
+              
+              <div className="text-center p-6 bg-gray-50 rounded-xl">
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">Partnership</h4>
+                <p className="text-gray-600">
+                  We build lasting relationships with our clients, working as an extension of their team.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Projects />
 
       {/* Contact Section */}
