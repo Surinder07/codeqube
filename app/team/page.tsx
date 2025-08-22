@@ -1,3 +1,5 @@
+'use client';
+
 import Header from '../../components/Header';
 
 export default function TeamPage() {
@@ -8,8 +10,10 @@ export default function TeamPage() {
       role: "Chief Executive Officer",
       shortRole: "CEO",
       description: "Visionary leader with over 15 years of experience in technology consulting and digital transformation. Surinder drives CodeQube's strategic direction and ensures we deliver exceptional value to our clients.",
-      image: "👨‍💼",
-      color: "yellow"
+      image: "https://via.placeholder.com/256x256/FFD700/000000?text=SS",
+      color: "yellow",
+      ethnicity: "Indian",
+      gender: "male"
     },
     {
       id: 2,
@@ -17,8 +21,10 @@ export default function TeamPage() {
       role: "Managing Director",
       shortRole: "MD",
       description: "Strategic leader overseeing operations and client relationships. Rachna brings extensive expertise in business development and ensures CodeQube maintains the highest standards of service delivery.",
-      image: "👩‍💼",
-      color: "yellow"
+      image: "https://via.placeholder.com/256x256/FFD700/000000?text=RS",
+      color: "yellow",
+      ethnicity: "Indian",
+      gender: "female"
     },
     {
       id: 3,
@@ -26,8 +32,10 @@ export default function TeamPage() {
       role: "Full Stack Developer",
       shortRole: "Developer",
       description: "Experienced full-stack developer with expertise in modern web technologies. Sachin builds robust, scalable applications using cutting-edge frameworks and best practices.",
-      image: "👨‍💻",
-      color: "amber"
+      image: "https://via.placeholder.com/256x256/F59E0B/000000?text=SS",
+      color: "amber",
+      ethnicity: "Indian",
+      gender: "male"
     },
     {
       id: 4,
@@ -35,8 +43,10 @@ export default function TeamPage() {
       role: "Senior Developer",
       shortRole: "Senior Dev",
       description: "Senior developer with deep technical knowledge and leadership skills. Vikas mentors junior developers and ensures code quality across all projects.",
-      image: "👨‍💻",
-      color: "amber"
+      image: "https://via.placeholder.com/256x256/F59E0B/000000?text=VK",
+      color: "amber",
+      ethnicity: "Indian",
+      gender: "male"
     },
     {
       id: 5,
@@ -44,8 +54,10 @@ export default function TeamPage() {
       role: "Marketing Head",
       shortRole: "Marketing",
       description: "Creative marketing strategist driving brand awareness and lead generation. Arjun develops comprehensive digital marketing campaigns that deliver measurable results.",
-      image: "📈",
-      color: "orange"
+      image: "https://via.placeholder.com/256x256/EA580C/000000?text=AS",
+      color: "orange",
+      ethnicity: "Indian",
+      gender: "male"
     },
     {
       id: 6,
@@ -53,8 +65,10 @@ export default function TeamPage() {
       role: "Sales Manager",
       shortRole: "Sales",
       description: "Results-driven sales professional with a proven track record of exceeding targets. Varun builds strong client relationships and drives business growth.",
-      image: "💼",
-      color: "orange"
+      image: "https://via.placeholder.com/256x256/EA580C/000000?text=V",
+      color: "orange",
+      ethnicity: "Indian",
+      gender: "male"
     },
     {
       id: 7,
@@ -62,8 +76,10 @@ export default function TeamPage() {
       role: "Sales Consultant",
       shortRole: "Consultant",
       description: "Experienced sales consultant specializing in technology solutions. Erik helps clients understand their needs and recommends the best digital transformation strategies.",
-      image: "🤝",
-      color: "yellow"
+      image: "https://via.placeholder.com/256x256/FFD700/000000?text=EM",
+      color: "yellow",
+      ethnicity: "White",
+      gender: "male"
     }
   ];
 
@@ -146,8 +162,30 @@ export default function TeamPage() {
                   <div className="text-center">
                     {/* Profile Picture */}
                     <div className="relative mb-6">
-                      <div className={`w-32 h-32 mx-auto ${colors.iconBg} rounded-full flex items-center justify-center border-4 border-white shadow-lg`}>
-                        <span className="text-4xl">{member.image}</span>
+                      <div className={`w-32 h-32 mx-auto ${colors.iconBg} rounded-full flex items-center justify-center border-4 border-white shadow-lg overflow-hidden`}>
+                        {/* AI-Generated Image Placeholder */}
+                        <img 
+                          src={member.image} 
+                          alt={`${member.name} - ${member.role}`}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            // Fallback to placeholder if image fails to load
+                            const target = e.currentTarget as HTMLImageElement;
+                            target.style.display = 'none';
+                            const fallback = target.nextElementSibling as HTMLElement;
+                            if (fallback) fallback.classList.remove('hidden');
+                          }}
+                        />
+                        <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center hidden">
+                          <div className="text-center text-gray-600">
+                            <div className="text-2xl mb-1">
+                              {member.gender === 'female' ? '👩' : '👨'}
+                            </div>
+                            <div className="text-xs font-medium">
+                              {member.ethnicity}
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 ${colors.badgeBg} text-black px-3 py-1 rounded-full text-sm font-semibold shadow-md`}>
                         {member.shortRole}
