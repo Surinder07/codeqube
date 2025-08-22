@@ -56,8 +56,8 @@ export default function Home() {
             </div>
 
             {/* Mobile Apps */}
-            <div className="bg-gradient-to-br from-gray-50 to-amber-50 p-8 rounded-xl hover:shadow-lg transition-shadow border border-gray-200 hover:border-amber-200">
-              <div className="w-16 h-16 bg-amber-400 rounded-lg flex items-center justify-center mb-6">
+            <div className="bg-gradient-to-br from-gray-50 to-yellow-50 p-8 rounded-xl hover:shadow-lg transition-shadow border border-gray-200 hover:border-yellow-200">
+              <div className="w-16 h-16 bg-yellow-400 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
@@ -69,8 +69,8 @@ export default function Home() {
             </div>
 
             {/* SEO & Digital Marketing */}
-            <div className="bg-gradient-to-br from-gray-50 to-orange-50 p-8 rounded-xl hover:shadow-lg transition-shadow border border-gray-200 hover:border-orange-200">
-              <div className="w-16 h-16 bg-orange-400 rounded-lg flex items-center justify-center mb-6">
+            <div className="bg-gradient-to-br from-gray-50 to-yellow-50 p-8 rounded-xl hover:shadow-lg transition-shadow border border-gray-200 hover:border-yellow-200">
+              <div className="w-16 h-16 bg-yellow-400 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
@@ -95,8 +95,8 @@ export default function Home() {
             </div>
 
             {/* Cloud Solutions */}
-            <div className="bg-gradient-to-br from-gray-50 to-amber-50 p-8 rounded-xl hover:shadow-lg transition-shadow border border-gray-200 hover:border-amber-200">
-              <div className="w-16 h-16 bg-amber-400 rounded-lg flex items-center justify-center mb-6">
+            <div className="bg-gradient-to-br from-gray-50 to-yellow-50 p-8 rounded-xl hover:shadow-lg transition-shadow border border-gray-200 hover:border-yellow-200">
+              <div className="w-16 h-16 bg-yellow-400 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                 </svg>
@@ -108,8 +108,8 @@ export default function Home() {
             </div>
 
             {/* Data Analytics */}
-            <div className="bg-gradient-to-br from-gray-50 to-orange-50 p-8 rounded-xl hover:shadow-lg transition-shadow border border-gray-200 hover:border-orange-200">
-              <div className="w-16 h-16 bg-orange-400 rounded-lg flex items-center justify-center mb-6">
+            <div className="bg-gradient-to-br from-gray-50 to-yellow-50 p-8 rounded-xl hover:shadow-lg transition-shadow border border-gray-200 hover:border-yellow-200">
+              <div className="w-16 h-16 bg-yellow-400 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
