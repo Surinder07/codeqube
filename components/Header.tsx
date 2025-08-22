@@ -35,19 +35,22 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">
+            <a href="/" className="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">
               Home
             </a>
-            <a href="#services" className="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">
+            <a href="/#services" className="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">
               Services
             </a>
-            <a href="#about" className="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">
+            <a href="/#about" className="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">
               About
             </a>
-            <a href="#projects" className="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">
+            <a href="/team" className="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">
+              Team
+            </a>
+            <a href="/#projects" className="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">
               Projects
             </a>
-            <a href="#contact" className="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">
+            <a href="/#contact" className="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors">
               Contact
             </a>
           </nav>
@@ -80,19 +83,22 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              <a href="#home" className="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">
+              <a href="/" className="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">
                 Home
               </a>
-              <a href="#services" className="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">
+              <a href="/#services" className="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">
                 Services
               </a>
-              <a href="#about" className="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">
+              <a href="/#about" className="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">
                 About
               </a>
-              <a href="#projects" className="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">
+              <a href="/team" className="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">
+                Team
+              </a>
+              <a href="/#projects" className="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">
                 Projects
               </a>
-              <a href="#contact" className="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">
+              <a href="/#contact" className="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">
                 Contact
               </a>
               <div className="pt-4">
