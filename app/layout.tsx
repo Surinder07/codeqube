@@ -1,29 +1,23 @@
-import type { Metadata } from "next";
-import "@/app/globals.css";                 // <-- use alias import
-import { Inter } from "next/font/google";
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "CodeQube — Product & Engineering Consultancy",
-  description:
-    "CodeQube helps teams design, build, and ship software faster. We deliver full-stack product engineering, cloud, and DevOps consulting.",
-  themeColor: "#0ea5e9",
-  openGraph: {
-    title: "CodeQube — Product & Engineering Consultancy",
-    description:
-      "We design, build, and scale web apps, APIs, and cloud infrastructure for startups and enterprises.",
-    type: "website",
-    url: "https://codeqube.io/",
-  },
-};
+  title: 'DigitalCraft - Digital Transformation & Technology Consulting',
+  description: 'Leading consulting firm specializing in digital transformation, web development, mobile apps, and strategic technology solutions. Transform your business with DigitalCraft.',
+  keywords: 'digital consulting, web development, mobile apps, technology consulting, digital transformation, SEO, cloud solutions',
+}
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-slate-950 text-slate-100 antialiased`}>
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
-  );
+  )
 }

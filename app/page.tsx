@@ -1,308 +1,351 @@
-import Header from "@/components/Header";
-import AboutUs from "@/components/AboutUs";
-import Projects from "@/components/Projects";
+import Header from '../components/Header';
+import AboutUs from '../components/AboutUs';
+import Projects from '../components/Projects';
 
-export default function Page() {
+export default function Home() {
   return (
-    <>
-      <div className="bg-gradient-to-r from-brand-600 to-blue-600 text-white text-sm">
-        <div className="mx-auto max-w-7xl px-4 py-2 text-center">
-          🚀 Limited openings this month — book a free 30‑min discovery call.
-          <a href="#contact" className="underline font-semibold">Get started</a>
-        </div>
-      </div>
-
+    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-yellow-50">
       <Header />
+      
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            Transform Your Business with
+            <span className="text-yellow-500 block">Digital Excellence</span>
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            We are a leading consulting firm specializing in digital transformation, 
+            web development, mobile apps, and strategic technology solutions that drive business growth.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-3 rounded-lg font-semibold text-lg transition-colors">
+              Get Started
+            </button>
+            <button className="border-2 border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-black px-8 py-3 rounded-lg font-semibold text-lg transition-colors">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </section>
 
-      {/* Hero */}
-      <section id="home" className="gradient relative">
-        <div className="mx-auto max-w-7xl px-4 pt-20 pb-24 lg:pt-28 lg:pb-32">
-          <div className="grid lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs text-slate-300">
-                <span className="inline-block h-2 w-2 rounded-full bg-emerald-400"></span>
-                Available for new projects
+      {/* Services Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Our Services
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Comprehensive digital solutions tailored to your business needs
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Web Development */}
+            <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-xl hover:shadow-lg transition-shadow border border-yellow-100">
+              <div className="w-16 h-16 bg-yellow-500 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
               </div>
-              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-                We design, build & scale <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-400">modern web apps</span>
-              </h1>
-              <p className="text-slate-300 text-lg max-w-2xl">
-                CodeQube is a product & engineering consultancy helping startups and enterprises ship faster — from MVP to enterprise‑grade platforms. React, Java/Spring, Node, AWS/GCP, CI/CD and beyond.
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Web Development</h3>
+              <p className="text-gray-600">
+                Custom websites, e-commerce platforms, and web applications built with cutting-edge technologies.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <a href="#contact" className="px-5 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-slate-900 font-semibold">Book a call</a>
-                <a href="#work" className="px-5 py-3 rounded-xl border border-slate-800 hover:border-slate-700">See our work</a>
-              </div>
-              <div className="flex items-center gap-6 pt-4">
-                <div className="text-3xl font-extrabold">30+</div>
-                <div className="text-sm text-slate-400">Projects delivered across fintech, e‑commerce, health, and SaaS.</div>
-              </div>
             </div>
-            <div className="lg:col-span-5">
-              <div className="relative rounded-2xl border border-slate-800 bg-slate-900/50 p-4 shadow-2xl">
-                <div className="aspect-[4/3] w-full rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 grid place-items-center">
-                  <div className="text-center">
-                    <svg className="mx-auto mb-4" width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 5h16v12H4z" stroke="#38bdf8" strokeWidth="1.2" /><path d="M4 17h16v2H4z" fill="#0ea5e9" /><circle cx="8" cy="9" r="1" fill="#38bdf8" /><rect x="10" y="8" width="8" height="2" fill="#38bdf8" /><rect x="6" y="12" width="12" height="2" fill="#38bdf8" /></svg>
-                    <p className="text-sm text-slate-400">Clean, fast, and scalable by default</p>
+
+            {/* Mobile Apps */}
+            <div className="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-xl hover:shadow-lg transition-shadow border border-yellow-100">
+              <div className="w-16 h-16 bg-yellow-500 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Mobile Applications</h3>
+              <p className="text-gray-600">
+                Native and cross-platform mobile apps for iOS and Android that engage users and drive results.
+              </p>
+            </div>
+
+            {/* SEO & Digital Marketing */}
+            <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-xl hover:shadow-lg transition-shadow border border-yellow-100">
+              <div className="w-16 h-16 bg-yellow-500 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">SEO & Digital Marketing</h3>
+              <p className="text-gray-600">
+                Search engine optimization, content marketing, and digital strategies to boost your online presence.
+              </p>
+            </div>
+
+            {/* Digital Consulting */}
+            <div className="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-xl hover:shadow-lg transition-shadow border border-yellow-100">
+              <div className="w-16 h-16 bg-yellow-500 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Digital Consulting</h3>
+              <p className="text-gray-600">
+                Strategic guidance on digital transformation, technology adoption, and business process optimization.
+              </p>
+            </div>
+
+            {/* Cloud Solutions */}
+            <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-xl hover:shadow-lg transition-shadow border border-yellow-100">
+              <div className="w-16 h-16 bg-yellow-500 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Cloud Solutions</h3>
+              <p className="text-gray-600">
+                Cloud infrastructure, migration, and optimization services for scalable and secure operations.
+              </p>
+            </div>
+
+            {/* Data Analytics */}
+            <div className="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-xl hover:shadow-lg transition-shadow border border-yellow-100">
+              <div className="w-16 h-16 bg-yellow-500 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Data Analytics</h3>
+              <p className="text-gray-600">
+                Business intelligence, data visualization, and analytics solutions to drive informed decisions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-yellow-500">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold text-black mb-2">500+</div>
+              <div className="text-gray-800">Projects Completed</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-black mb-2">50+</div>
+              <div className="text-gray-800">Industries Served</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-black mb-2">98%</div>
+              <div className="text-gray-800">Client Satisfaction</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-black mb-2">24/7</div>
+              <div className="text-gray-800">Support Available</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <AboutUs />
+      <Projects />
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Let's discuss how we can help you achieve your digital goals
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Get in Touch</h3>
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">Email</div>
+                    <div className="text-gray-600">info@codeqube.io</div>
+                  </div>
+                </div>
+                
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">Phone</div>
+                    <div className="text-gray-600">+1 647-867-0848</div>
+                  </div>
+                </div>
+                
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">Office</div>
+                    <div className="text-gray-600">Mississauga, ON</div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Logos */}
-      <section className="border-y border-slate-800 bg-slate-900/40">
-        <div className="mx-auto max-w-7xl px-4 py-10">
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-6 opacity-70">
-            <div className="flex items-center justify-center">AWS</div>
-            <div className="flex items-center justify-center">GCP</div>
-            <div className="flex items-center justify-center">React</div>
-            <div className="flex items-center justify-center">Java</div>
-            <div className="flex items-center justify-center">Spring</div>
-            <div className="flex items-center justify-center">Kubernetes</div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section id="services" className="mx-auto max-w-7xl px-4 py-20">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <div className="md:col-span-2 lg:col-span-3 mb-4">
-            <h2 className="text-3xl md:text-4xl font-extrabold">What we do</h2>
-            <p className="text-slate-300 mt-2 max-w-2xl">End‑to‑end delivery across product, engineering, and cloud. Pick a package or mix‑and‑match.</p>
-          </div>
-          <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="rounded-xl bg-brand-500/10 p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 6v12M6 12h12" /></svg>
-              </div>
-              <h3 className="text-xl font-bold">MVP in 4–8 weeks</h3>
-            </div>
-            <p className="text-slate-300">Validate your idea quickly with a production‑ready MVP. Design, frontend, backend, CI/CD, and cloud hosting.</p>
-            <ul className="mt-4 space-y-2 text-sm text-slate-300 list-disc list-inside">
-              <li>React / Next.js, Tailwind</li>
-              <li>Java/Spring Boot or Node/Express APIs</li>
-              <li>PostgreSQL, MongoDB, or Firebase</li>
-            </ul>
-          </article>
-          <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="rounded-xl bg-brand-500/10 p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 6h16M4 12h10M4 18h7" /></svg>
-              </div>
-              <h3 className="text-xl font-bold">Product Engineering</h3>
-            </div>
-            <p className="text-slate-300">Feature development, refactors, performance, accessibility — embedded with your team or as a squad.</p>
-            <ul className="mt-4 space-y-2 text-sm text-slate-300 list-disc list-inside">
-              <li>Design systems, component libraries</li>
-              <li>API design, event‑driven systems</li>
-              <li>Observability and SRE best practices</li>
-            </ul>
-          </article>
-          <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="rounded-xl bg-brand-500/10 p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3l8 4v6c0 4.418-3.582 8-8 8s-8-3.582-8-8V7l8-4z" /></svg>
-              </div>
-              <h3 className="text-xl font-bold">Cloud & DevOps</h3>
-            </div>
-            <p className="text-slate-300">Infrastructure as code, secure CI/CD, and scalable deployments on AWS or GCP.</p>
-            <ul className="mt-4 space-y-2 text-sm text-slate-300 list-disc list-inside">
-              <li>Terraform, GitHub Actions, ArgoCD</li>
-              <li>ECS/EKS, Cloud Run/GKE, Lambda</li>
-              <li>Cost optimization and security hardening</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      {/* Work */}
-      <section id="work" className="border-y border-slate-800 bg-slate-900/40">
-        <div className="mx-auto max-w-7xl px-4 py-20">
-          <div className="mb-8">
-            <h2 className="text-3xl md:text-4xl font-extrabold">Selected work</h2>
-            <p className="text-slate-300 mt-2 max-w-2xl">A few representative projects. Details available on request.</p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-5">
-              <div className="aspect-video rounded-xl bg-slate-800/60 grid place-items-center mb-4 text-slate-400">Fintech Risk Engine</div>
-              <h3 className="font-bold">Risk Scoring Platform</h3>
-              <p className="text-sm text-slate-300 mt-1">Migrated Excel models to a web platform using React + Spring Boot; added audit trails & RBAC; 0‑downtime deployments on AWS ECS.</p>
-              <div className="mt-3 text-xs text-slate-400">React • Spring Boot • Postgres • ECS • Terraform</div>
-            </article>
-            <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-5">
-              <div className="aspect-video rounded-xl bg-slate-800/60 grid place-items-center mb-4 text-slate-400">E‑commerce</div>
-              <h3 className="font-bold">Headless Storefront</h3>
-              <p className="text-sm text-slate-300 mt-1">Next.js storefront with Stripe integration and CMS; Lighthouse 95+; shipped in 6 weeks.</p>
-              <div className="mt-3 text-xs text-slate-400">Next.js • Stripe • Vercel • GraphQL</div>
-            </article>
-            <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-5">
-              <div className="aspect-video rounded-xl bg-slate-800/60 grid place-items-center mb-4 text-slate-400">HealthTech</div>
-              <h3 className="font-bold">Telemedicine Portal</h3>
-              <p className="text-sm text-slate-300 mt-1">HIPAA‑friendly portal with WebRTC video, e‑prescriptions, and role‑based access.</p>
-              <div className="mt-3 text-xs text-slate-400">React • Node • WebRTC • GCP</div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-       {/* Project Categories */}
-            <section id="projects" className="mx-auto max-w-7xl px-4 py-20">
-              <div className="mb-8">
-                <h2 className="text-3xl md:text-4xl font-extrabold">Project Categories</h2>
-                <p className="text-slate-300 mt-2 max-w-2xl">Some of the domains where we’ve delivered impactful solutions.</p>
-              </div>
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 text-center">
-                  <h3 className="font-bold text-xl mb-2">🎬 Streaming Apps</h3>
-                  <p className="text-sm text-slate-300">Built scalable video platforms with adaptive streaming, real-time chat, and subscription models.</p>
-                </article>
-                <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 text-center">
-                  <h3 className="font-bold text-xl mb-2">🏦 Banking Projects</h3>
-                  <p className="text-sm text-slate-300">Developed secure, compliant fintech apps including loan processing, payment gateways, and risk engines.</p>
-                </article>
-                <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 text-center">
-                  <h3 className="font-bold text-xl mb-2">🚚 Logistics</h3>
-                  <p className="text-sm text-slate-300">Implemented tracking, route optimization, and warehouse management systems at scale.</p>
-                </article>
-                <article className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 text-center">
-                  <h3 className="font-bold text-xl mb-2">🍔 Food Delivery</h3>
-                  <p className="text-sm text-slate-300">Launched mobile-first ordering platforms with real-time order tracking, payments, and restaurant dashboards.</p>
-                </article>
-              </div>
-            </section>
-
-      {/* Process */}
-      <section id="process" className="mx-auto max-w-7xl px-4 py-20">
-        <div className="mb-8">
-          <h2 className="text-3xl md:text-4xl font-extrabold">How we work</h2>
-          <p className="text-slate-300 mt-2 max-w-2xl">Transparent, predictable delivery using an agile cadence and strong engineering fundamentals.</p>
-        </div>
-        <ol className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <li className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-            <div className="text-sm text-slate-400">01</div>
-            <h3 className="font-bold mt-2">Discover</h3>
-            <p className="text-slate-300 text-sm mt-1">Deep‑dive on goals, constraints, and success metrics; draft a lightweight proposal.</p>
-          </li>
-          <li className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-            <div className="text-sm text-slate-400">02</div>
-            <h3 className="font-bold mt-2">Design</h3>
-            <p className="text-slate-300 text-sm mt-1">Architecture, UX flows, and backlog. We plan for observability and scale day one.</p>
-          </li>
-          <li className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-            <div className="text-sm text-slate-400">03</div>
-            <h3 className="font-bold mt-2">Build</h3>
-            <p className="text-slate-300 text-sm mt-1">Iterative delivery in weekly sprints with previews, demos, and clear status reports.</p>
-          </li>
-          <li className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-            <div className="text-sm text-slate-400">04</div>
-            <h3 className="font-bold mt-2">Launch & Scale</h3>
-            <p className="text-slate-300 text-sm mt-1">Harden, ship, and optimize. Handover or ongoing partnership — your call.</p>
-          </li>
-        </ol>
-      </section>
-
-      {/* About */}
-      <section id="about" className="border-y border-slate-800 bg-slate-900/40">
-        <div className="mx-auto max-w-7xl px-4 py-20 grid gap-10 md:grid-cols-2 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-extrabold">Your fractional product & platform team</h2>
-            <p className="text-slate-300 mt-3">We’re senior engineers and product folks with experience across banking, retail, and SaaS. We’ve shipped monoliths and microservices, migrated clouds, and tamed legacy codebases. We meet you where you are.</p>
-            <ul className="mt-4 space-y-2 text-slate-300 text-sm list-disc list-inside">
-              <li>Strong Java/Spring, Node, and React expertise</li>
-              <li>AWS & GCP certified practitioners</li>
-              <li>Security‑first: auth, audit, compliance in mind</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-            <div className="grid grid-cols-2 gap-6 text-center">
-              <div>
-                <div className="text-3xl font-extrabold">95%</div>
-                <div className="text-xs text-slate-400">On‑time milestones</div>
-              </div>
-              <div>
-                <div className="text-3xl font-extrabold">$2.1M</div>
-                <div className="text-xs text-slate-400">Client revenue enabled</div>
-              </div>
-              <div>
-                <div className="text-3xl font-extrabold">24/7</div>
-                <div className="text-xs text-slate-400">On‑call availability</div>
-              </div>
-              <div>
-                <div className="text-3xl font-extrabold">A+</div>
-                <div className="text-xs text-slate-400">Security posture</div>
-              </div>
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                      placeholder="John"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                      placeholder="Doe"
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                    placeholder="john@company.com"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                    Company
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                    placeholder="Your Company"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Project Details
+                  </label>
+                  <textarea
+                    id="message"
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                    placeholder="Tell us about your project..."
+                  ></textarea>
+                </div>
+                
+                <button
+                  type="submit"
+                  className="w-full bg-yellow-500 hover:bg-yellow-600 text-black py-3 px-6 rounded-lg font-semibold transition-colors"
+                >
+                  Send Message
+                </button>
+              </form>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="mx-auto max-w-7xl px-4 py-20">
-        <div className="grid gap-10 lg:grid-cols-2 items-start">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-extrabold">Tell us about your project</h2>
-            <p className="text-slate-300 mt-2">Drop a note — we’ll reply within one business day.</p>
-            <div className="mt-6 space-y-4 text-slate-300 text-sm">
-              <div className="flex items-center gap-3"><span className="rounded-lg bg-slate-800 p-2">📧</span> <a className="hover:underline" href="mailto:info@codeqube.io">info@codeqube.io</a></div>
-              <div className="flex items-center gap-3"><span className="rounded-lg bg-slate-800 p-2">📍</span> Toronto · Remote‑first</div>
-            </div>
-          </div>
-          <form action="https://formspree.io/f/your-form-id" method="POST" className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-            <div className="grid gap-4">
-              <div>
-                <label className="block text-sm mb-1" htmlFor="name">Name</label>
-                <input id="name" name="name" required className="w-full rounded-xl bg-slate-950 border border-slate-800 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Jane Doe" />
-              </div>
-              <div>
-                <label className="block text-sm mb-1" htmlFor="email">Email</label>
-                <input id="email" name="email" type="email" required className="w-full rounded-xl bg-slate-950 border border-slate-800 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="jane@company.com" />
-              </div>
-              <div>
-                <label className="block text-sm mb-1" htmlFor="budget">Budget</label>
-                <select id="budget" name="budget" className="w-full rounded-xl bg-slate-950 border border-slate-800 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500">
-                  <option value="">Select…</option>
-                  <option>Under $10k</option>
-                  <option>$10k–$25k</option>
-                  <option>$25k–$50k</option>
-                  <option>$50k+</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm mb-1" htmlFor="message">Project details</label>
-                <textarea id="message" name="message" rows={5} className="w-full rounded-xl bg-slate-950 border border-slate-800 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="What are you building? Timelines? Tech stack preferences?"></textarea>
-              </div>
-              <div className="flex items-start gap-2 text-xs text-slate-400">
-                <input id="nda" type="checkbox" name="nda" className="mt-1" />
-                <label htmlFor="nda">I’d like to sign an NDA before sharing details.</label>
-              </div>
-              <button className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-5 py-3 font-semibold text-slate-900 hover:bg-brand-400" type="submit">
-                Send message
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M3 12l18-9-9 18-2-7-7-2z" /></svg>
-              </button>
-              <p className="text-xs text-slate-500">By submitting, you agree to our privacy policy.</p>
-            </div>
-          </form>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800 bg-slate-900/40">
-        <div className="mx-auto max-w-7xl px-4 py-10 grid gap-6 md:grid-cols-3 items-center">
-          <div className="text-sm text-slate-400">© {new Date().getFullYear()} CodeQube. All rights reserved.</div>
-          <nav className="flex justify-center gap-6 text-sm">
-            <a href="#services" className="hover:text-brand-300">Services</a>
-            <a href="#work" className="hover:text-brand-300">Work</a>
-            <a href="#contact" className="hover:text-brand-300">Contact</a>
-          </nav>
-          <div className="flex md:justify-end gap-4 text-sm">
-            <a href="#" className="hover:text-brand-300">Privacy</a>
-            <a href="#" className="hover:text-brand-300">Terms</a>
+      <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="col-span-1 md:col-span-2">
+              <div className="flex items-center space-x-3 mb-4">
+                {/* CodeQube Logo in Footer */}
+                <div className="grid grid-cols-2 gap-1 w-8 h-8">
+                  <div className="bg-yellow-400 flex items-center justify-center">
+                    <span className="text-black font-bold text-xs">C</span>
+                  </div>
+                  <div className="bg-yellow-400 flex items-center justify-center">
+                    <span className="text-black font-bold text-xs">O</span>
+                  </div>
+                  <div className="bg-yellow-400 flex items-center justify-center">
+                    <span className="text-black font-bold text-xs">D</span>
+                  </div>
+                  <div className="bg-yellow-400 flex items-center justify-center">
+                    <span className="text-black font-bold text-xs">E</span>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-yellow-400">CodeQube</h3>
+              </div>
+              <p className="text-gray-300 mb-6 max-w-md">
+                Your trusted partner for digital transformation, web development, and strategic technology consulting.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                  </svg>
+                </a>
+                <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Services</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li><a href="#" className="hover:text-yellow-400 transition-colors">Web Development</a></li>
+                <li><a href="#" className="hover:text-yellow-400 transition-colors">Mobile Apps</a></li>
+                <li><a href="#" className="hover:text-yellow-400 transition-colors">Digital Consulting</a></li>
+                <li><a href="#" className="hover:text-yellow-400 transition-colors">Cloud Solutions</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li><a href="#" className="hover:text-yellow-400 transition-colors">About Us</a></li>
+                <li><a href="#" className="hover:text-yellow-400 transition-colors">Our Team</a></li>
+                <li><a href="#" className="hover:text-yellow-400 transition-colors">Careers</a></li>
+                <li><a href="#" className="hover:text-yellow-400 transition-colors">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; {new Date().getFullYear()} CodeQube. All rights reserved.</p>
           </div>
         </div>
       </footer>
-    </>
+    </main>
   );
 }
