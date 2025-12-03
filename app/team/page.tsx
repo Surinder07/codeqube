@@ -6,65 +6,65 @@ export default function TeamPage() {
   const teamMembers = [
     {
       id: 1,
-      name: "Surinder Singh",
+      name: "Carlos Herrera",
       role: "Chief Executive Officer",
       shortRole: "CEO",
-      description: "Visionary leader with over 15 years of experience in technology consulting and digital transformation. Surinder drives CodeQube's strategic direction and ensures we deliver exceptional value to our clients.",
-      image: "https://via.placeholder.com/256x256/FFD700/000000?text=SS",
+      description: "Visionary leader with over 15 years of experience in technology consulting and digital transformation. Carlos drives CodeQube's strategic direction and ensures we deliver exceptional value to our clients.",
+      image: "https://via.placeholder.com/256x256/FFD700/000000?text=CH",
       color: "yellow"
     },
     {
       id: 2,
-      name: "Rachna Singh",
+      name: "Lucia Martinez",
       role: "Managing Director",
       shortRole: "MD",
-      description: "Strategic leader overseeing operations and client relationships. Rachna brings extensive expertise in business development and ensures CodeQube maintains the highest standards of service delivery.",
-      image: "https://via.placeholder.com/256x256/FFD700/000000?text=RS",
+      description: "Strategic leader overseeing operations and client relationships. Lucia brings extensive expertise in business development and ensures CodeQube maintains the highest standards of service delivery.",
+      image: "https://via.placeholder.com/256x256/FFD700/000000?text=LM",
       color: "yellow"
     },
     {
       id: 3,
-      name: "Sachin Singh",
+      name: "Diego Alvarez",
       role: "Full Stack Developer",
       shortRole: "Developer",
-      description: "Experienced full-stack developer with expertise in modern web technologies. Sachin builds robust, scalable applications using cutting-edge frameworks and best practices.",
-      image: "https://via.placeholder.com/256x256/F59E0B/000000?text=SS",
+      description: "Experienced full-stack developer with expertise in modern web technologies. Diego builds robust, scalable applications using cutting-edge frameworks and best practices.",
+      image: "https://via.placeholder.com/256x256/F59E0B/000000?text=DA",
       color: "amber"
     },
     {
       id: 4,
-      name: "Vikas Kumar",
+      name: "Mariana Costa",
       role: "Senior Developer",
       shortRole: "Senior Dev",
-      description: "Senior developer with deep technical knowledge and leadership skills. Vikas mentors junior developers and ensures code quality across all projects.",
-      image: "https://via.placeholder.com/256x256/F59E0B/000000?text=VK",
+      description: "Senior developer with deep technical knowledge and leadership skills. Mariana mentors junior developers and ensures code quality across all projects.",
+      image: "https://via.placeholder.com/256x256/F59E0B/000000?text=MC",
       color: "amber"
     },
     {
       id: 5,
-      name: "Arjun Sharma",
+      name: "Fernando Ruiz",
       role: "Marketing Head",
       shortRole: "Marketing",
-      description: "Creative marketing strategist driving brand awareness and lead generation. Arjun develops comprehensive digital marketing campaigns that deliver measurable results.",
-      image: "https://via.placeholder.com/256x256/EA580C/000000?text=AS",
+      description: "Creative marketing strategist driving brand awareness and lead generation. Fernando develops comprehensive digital marketing campaigns that deliver measurable results.",
+      image: "https://via.placeholder.com/256x256/EA580C/000000?text=FR",
       color: "orange"
     },
     {
       id: 6,
-      name: "Varun",
+      name: "Sofia Ramos",
       role: "Sales Manager",
       shortRole: "Sales",
-      description: "Results-driven sales professional with a proven track record of exceeding targets. Varun builds strong client relationships and drives business growth.",
-      image: "https://via.placeholder.com/256x256/EA580C/000000?text=V",
+      description: "Results-driven sales professional with a proven track record of exceeding targets. Sofia builds strong client relationships and drives business growth.",
+      image: "https://via.placeholder.com/256x256/EA580C/000000?text=SR",
       color: "orange"
     },
     {
       id: 7,
-      name: "Erik Melena",
+      name: "Javier Morales",
       role: "Sales Consultant",
       shortRole: "Consultant",
-      description: "Experienced sales consultant specializing in technology solutions. Erik helps clients understand their needs and recommends the best digital transformation strategies.",
-      image: "https://via.placeholder.com/256x256/FFD700/000000?text=EM",
+      description: "Experienced sales consultant specializing in technology solutions. Javier helps clients understand their needs and recommends the best digital transformation strategies.",
+      image: "https://via.placeholder.com/256x256/FFD700/000000?text=JM",
       color: "yellow"
     }
   ];
