@@ -189,7 +189,7 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">Office</div>
-                    <div className="text-gray-600">Vancouver, BC</div>
+                    <div className="text-gray-600">2 County Ct BlvdBrampton, ON L6W 3W8</div>
                   </div>
                 </div>
               </div>
