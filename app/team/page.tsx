@@ -6,66 +6,48 @@ export default function TeamPage() {
   const teamMembers = [
     {
       id: 1,
-      name: "Carlos Herrera",
+      name: "Raman Sharma",
       role: "Chief Executive Officer",
       shortRole: "CEO",
-      description: "Visionary leader with over 15 years of experience in technology consulting and digital transformation. Carlos drives CodeQube's strategic direction and ensures we deliver exceptional value to our clients.",
-      image: "https://via.placeholder.com/256x256/FFD700/000000?text=CH",
+      description: "Visionary leader with over 15 years of experience in technology consulting and digital transformation. Raman drives CodeQube's strategic direction and ensures we deliver exceptional value to our clients.",
+      image: "https://via.placeholder.com/256x256/FFD700/000000?text=RS",
       color: "yellow"
     },
     {
       id: 2,
-      name: "Lucia Martinez",
+      name: "Travis Green",
       role: "Managing Director",
       shortRole: "MD",
-      description: "Strategic leader overseeing operations and client relationships. Lucia brings extensive expertise in business development and ensures CodeQube maintains the highest standards of service delivery.",
-      image: "https://via.placeholder.com/256x256/FFD700/000000?text=LM",
+      description: "Strategic leader overseeing operations and client relationships. Travis brings extensive expertise in business development and ensures CodeQube maintains the highest standards of service delivery.",
+      image: "https://via.placeholder.com/256x256/FFD700/000000?text=TG",
       color: "yellow"
     },
     {
       id: 3,
-      name: "Diego Alvarez",
+      name: "Felix Schmidt",
       role: "Full Stack Developer",
       shortRole: "Developer",
-      description: "Experienced full-stack developer with expertise in modern web technologies. Diego builds robust, scalable applications using cutting-edge frameworks and best practices.",
-      image: "https://via.placeholder.com/256x256/F59E0B/000000?text=DA",
+      description: "Experienced full-stack developer with expertise in modern web technologies. Felix builds robust, scalable applications using cutting-edge frameworks and best practices.",
+      image: "https://via.placeholder.com/256x256/F59E0B/000000?text=FS",
       color: "amber"
     },
     {
       id: 4,
-      name: "Mariana Costa",
+      name: "Johanna Weber",
       role: "Senior Developer",
       shortRole: "Senior Dev",
-      description: "Senior developer with deep technical knowledge and leadership skills. Mariana mentors junior developers and ensures code quality across all projects.",
-      image: "https://via.placeholder.com/256x256/F59E0B/000000?text=MC",
+      description: "Senior developer with deep technical knowledge and leadership skills. Johanna mentors junior developers and ensures code quality across all projects.",
+      image: "https://via.placeholder.com/256x256/F59E0B/000000?text=JW",
       color: "amber"
     },
     {
       id: 5,
-      name: "Fernando Ruiz",
-      role: "Marketing Head",
-      shortRole: "Marketing",
-      description: "Creative marketing strategist driving brand awareness and lead generation. Fernando develops comprehensive digital marketing campaigns that deliver measurable results.",
-      image: "https://via.placeholder.com/256x256/EA580C/000000?text=FR",
+      name: "Lukas Becker",
+      role: "Data Analyst",
+      shortRole: "Analyst",
+      description: "Expert data analyst transforming complex data into actionable insights. Lukas develops comprehensive analytics solutions that drive informed business decisions.",
+      image: "https://via.placeholder.com/256x256/EA580C/000000?text=LB",
       color: "orange"
-    },
-    {
-      id: 6,
-      name: "Sofia Ramos",
-      role: "Sales Manager",
-      shortRole: "Sales",
-      description: "Results-driven sales professional with a proven track record of exceeding targets. Sofia builds strong client relationships and drives business growth.",
-      image: "https://via.placeholder.com/256x256/EA580C/000000?text=SR",
-      color: "orange"
-    },
-    {
-      id: 7,
-      name: "Javier Morales",
-      role: "Sales Consultant",
-      shortRole: "Consultant",
-      description: "Experienced sales consultant specializing in technology solutions. Javier helps clients understand their needs and recommends the best digital transformation strategies.",
-      image: "https://via.placeholder.com/256x256/FFD700/000000?text=JM",
-      color: "yellow"
     }
   ];
 
