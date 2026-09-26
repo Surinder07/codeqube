@@ -1,319 +1,216 @@
-'use client';
-
+import type { Metadata } from 'next';
+import Link from 'next/link';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import PageHero from '../../components/PageHero';
+import CTASection from '../../components/CTASection';
+import SectionHeading from '../../components/ui/SectionHeading';
+import Reveal, { Stagger, StaggerItem } from '../../components/ui/Reveal';
+import Counter from '../../components/ui/Counter';
+import { ArrowRight, Layers, Shield, Target, Users, Zap } from '../../components/ui/Icons';
+import { offices, stats } from '../../lib/data/company';
+
+export const metadata: Metadata = {
+  title: 'Our Team',
+  description: 'Meet the leadership and engineers behind CodeQube — a Canadian engineering consultancy of 100+ builders across Brampton, Vancouver and Halifax.',
+};
+
+type Member = {
+  name: string;
+  role: string;
+  initials: string;
+  bio: string;
+  focus: string[];
+};
+
+const leadership: Member[] = [
+  {
+    name: 'Raman Sharma',
+    role: 'Chief Executive Officer',
+    initials: 'RS',
+    bio: 'Fifteen-plus years in technology consulting and digital transformation. Raman sets CodeQube’s strategic direction, still reviews architecture decisions on flagship engagements, and is the reason we say no to work we cannot do well.',
+    focus: ['Strategy', 'Enterprise architecture', 'Client partnerships'],
+  },
+  {
+    name: 'Travis Green',
+    role: 'Managing Director',
+    initials: 'TG',
+    bio: 'Travis runs operations and delivery. He built our engagement model — small senior squads, transparent reporting, fixed outcomes — and is accountable for every client relationship staying healthy from kickoff to handover.',
+    focus: ['Delivery', 'Operations', 'Business development'],
+  },
+];
+
+const engineers: Member[] = [
+  {
+    name: 'Felix Schmidt',
+    role: 'Full Stack Developer',
+    initials: 'FS',
+    bio: 'Builds end-to-end product features across React, Node and Java. Felix owns our Next.js reference architecture and the component library our front-end squads start from.',
+    focus: ['React / Next.js', 'Node.js', 'Java / Spring'],
+  },
+  {
+    name: 'Johanna Weber',
+    role: 'Senior Developer',
+    initials: 'JW',
+    bio: 'Senior backend engineer and code-quality lead. Johanna runs our review standards and mentoring programme, and leads the platform squad on our fintech and healthcare engagements.',
+    focus: ['Distributed systems', 'Kotlin / Java', 'Mentoring'],
+  },
+  {
+    name: 'Lukas Becker',
+    role: 'Data Analyst',
+    initials: 'LB',
+    bio: 'Turns messy operational data into decisions. Lukas designs the analytics layers behind our dashboards and works with clients to define the metrics that actually matter.',
+    focus: ['SQL / dbt', 'Python', 'BI & visualisation'],
+  },
+];
+
+const values = [
+  { Icon: Users, title: 'Collaboration', detail: 'One team with the client. No “us and them”, no hidden backlog, no surprises in the status report.' },
+  { Icon: Zap, title: 'Innovation with restraint', detail: 'We adopt new technology when it solves a real problem — and we are honest when the boring option is the better one.' },
+  { Icon: Shield, title: 'Craft', detail: 'Reviewed code, tested paths, documented decisions. Excellence is a habit, not a phase at the end.' },
+  { Icon: Target, title: 'Outcomes', detail: 'We measure ourselves on what the software does for the business, not on hours logged or features shipped.' },
+  { Icon: Layers, title: 'Ownership', detail: 'Whoever builds it, runs it. Every squad carries its systems through launch and into steady state.' },
+];
+
+function Avatar({ initials, dark = false }: { initials: string; dark?: boolean }) {
+  return (
+    <div className={`relative flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-xl text-2xl font-bold ${dark ? 'bg-white/10 text-yellow-400' : 'bg-gray-900 text-yellow-400'}`}>
+      <span className="absolute inset-0 bg-grid-dark opacity-40" />
+      <span className="relative">{initials}</span>
+    </div>
+  );
+}
 
 export default function TeamPage() {
-  const teamMembers = [
-    {
-      id: 1,
-      name: "Raman Sharma",
-      role: "Chief Executive Officer",
-      shortRole: "CEO",
-      description: "Visionary leader with over 15 years of experience in technology consulting and digital transformation. Raman drives CodeQube's strategic direction and ensures we deliver exceptional value to our clients.",
-      image: "https://via.placeholder.com/256x256/FFD700/000000?text=RS",
-      color: "yellow"
-    },
-    {
-      id: 2,
-      name: "Travis Green",
-      role: "Managing Director",
-      shortRole: "MD",
-      description: "Strategic leader overseeing operations and client relationships. Travis brings extensive expertise in business development and ensures CodeQube maintains the highest standards of service delivery.",
-      image: "https://via.placeholder.com/256x256/FFD700/000000?text=TG",
-      color: "yellow"
-    },
-    {
-      id: 3,
-      name: "Felix Schmidt",
-      role: "Full Stack Developer",
-      shortRole: "Developer",
-      description: "Experienced full-stack developer with expertise in modern web technologies. Felix builds robust, scalable applications using cutting-edge frameworks and best practices.",
-      image: "https://via.placeholder.com/256x256/F59E0B/000000?text=FS",
-      color: "amber"
-    },
-    {
-      id: 4,
-      name: "Johanna Weber",
-      role: "Senior Developer",
-      shortRole: "Senior Dev",
-      description: "Senior developer with deep technical knowledge and leadership skills. Johanna mentors junior developers and ensures code quality across all projects.",
-      image: "https://via.placeholder.com/256x256/F59E0B/000000?text=JW",
-      color: "amber"
-    },
-    {
-      id: 5,
-      name: "Lukas Becker",
-      role: "Data Analyst",
-      shortRole: "Analyst",
-      description: "Expert data analyst transforming complex data into actionable insights. Lukas develops comprehensive analytics solutions that drive informed business decisions.",
-      image: "https://via.placeholder.com/256x256/EA580C/000000?text=LB",
-      color: "orange"
-    }
-  ];
-
-  const getColorClasses = (color: string) => {
-    switch (color) {
-      case 'yellow':
-        return {
-          bg: 'bg-gradient-to-br from-gray-50 to-yellow-50',
-          border: 'border-yellow-200',
-          hoverBorder: 'hover:border-yellow-300',
-          iconBg: 'bg-yellow-400',
-          badgeBg: 'bg-yellow-500',
-          text: 'text-yellow-600'
-        };
-      case 'amber':
-        return {
-          bg: 'bg-gradient-to-br from-gray-50 to-amber-50',
-          border: 'border-amber-200',
-          hoverBorder: 'hover:border-amber-300',
-          iconBg: 'bg-amber-400',
-          badgeBg: 'bg-amber-500',
-          text: 'text-amber-600'
-        };
-      case 'orange':
-        return {
-          bg: 'bg-gradient-to-br from-gray-50 to-orange-50',
-          border: 'border-orange-200',
-          hoverBorder: 'hover:border-orange-300',
-          iconBg: 'bg-orange-400',
-          badgeBg: 'bg-orange-500',
-          text: 'text-orange-600'
-        };
-      default:
-        return {
-          bg: 'bg-gradient-to-br from-gray-50 to-yellow-50',
-          border: 'border-yellow-200',
-          hoverBorder: 'hover:border-yellow-300',
-          iconBg: 'bg-yellow-400',
-          badgeBg: 'bg-yellow-500',
-          text: 'text-yellow-600'
-        };
-    }
-  };
-
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-yellow-50">
+    <>
       <Header />
-      
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Meet Our
-            <span className="text-yellow-500 block">Amazing Team</span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Dedicated professionals working together to deliver exceptional digital solutions 
-            and transform businesses through technology innovation.
-          </p>
-        </div>
-      </section>
+      <main>
+        <PageHero
+          eyebrow="Our team"
+          title={
+            <>
+              Senior engineers who <span className="text-yellow-500">stay accountable</span> for what they ship.
+            </>
+          }
+          description="CodeQube is 100+ engineers, architects, data specialists and designers across three Canadian offices. Here are some of the people who lead the work."
+          crumbs={[{ href: '/team', label: 'Team' }]}
+          aside={
+            <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-gray-200 bg-gray-200">
+              {stats.slice(0, 4).map((s) => (
+                <div key={s.label} className="bg-white p-5">
+                  <dd className="text-3xl font-bold text-gray-900">
+                    <Counter value={s.value} suffix={s.suffix} />
+                  </dd>
+                  <dt className="mt-1 text-xs text-gray-500">{s.label}</dt>
+                </div>
+              ))}
+            </dl>
+          }
+        />
 
-      {/* Team Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Our Team Members
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From leadership to development, each team member brings unique expertise and passion
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member) => {
-              const colors = getColorClasses(member.color);
-              return (
-                <div key={member.id} className={`${colors.bg} p-8 rounded-xl hover:shadow-lg transition-all duration-300 border ${colors.border} ${colors.hoverBorder} hover:scale-105`}>
-                  <div className="text-center">
-                    {/* Profile Picture */}
-                    <div className="relative mb-6">
-                      <div className={`w-32 h-32 mx-auto ${colors.iconBg} rounded-full flex items-center justify-center border-4 border-white shadow-lg overflow-hidden`}>
-                        {/* AI-Generated Image Placeholder */}
-                        <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                          <div className="text-center text-gray-600">
-                            <div className="text-2xl mb-1">
-                              👤
-                            </div>
-                            <div className="text-xs font-medium">
-                              Profile
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 ${colors.badgeBg} text-black px-3 py-1 rounded-full text-sm font-semibold shadow-md`}>
-                        {member.shortRole}
-                      </div>
+        {/* Leadership — split rows */}
+        <section className="section bg-white">
+          <div className="container-x">
+            <SectionHeading eyebrow="Leadership" title="Who sets the direction." />
+            <div className="mt-12 divide-y divide-gray-200 border-y border-gray-200">
+              {leadership.map((m, i) => (
+                <Reveal key={m.name} delay={i * 0.05} className="grid gap-6 py-10 lg:grid-cols-12 lg:items-start">
+                  <div className="flex items-center gap-5 lg:col-span-4">
+                    <Avatar initials={m.initials} />
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900">{m.name}</h3>
+                      <p className="text-sm font-medium text-yellow-700">{m.role}</p>
                     </div>
-                    
-                    {/* Name and Role */}
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                    <p className={`${colors.text} font-semibold mb-4`}>{member.role}</p>
-                    
-                    {/* Description */}
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {member.description}
-                    </p>
                   </div>
-                </div>
-              );
-            })}
+                  <p className="leading-relaxed text-gray-600 lg:col-span-5">{m.bio}</p>
+                  <ul className="flex flex-wrap gap-1.5 lg:col-span-3 lg:justify-end">
+                    {m.focus.map((f) => <li key={f} className="tag">{f}</li>)}
+                  </ul>
+                </Reveal>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Company Culture Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Our Culture & Values
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The principles that guide our team and shape our work environment
-            </p>
+        {/* Engineering — dark grid */}
+        <section className="section bg-gray-950 text-white">
+          <div className="container-x">
+            <SectionHeading
+              dark
+              eyebrow="Engineering"
+              title="The people writing the code."
+              description="A sample of the engineers leading squads today. Every CodeQube engagement is staffed by people like these — not by a bench."
+            />
+            <Stagger className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-3">
+              {engineers.map((m) => (
+                <StaggerItem key={m.name} className="group flex flex-col bg-gray-950 p-7 transition-colors hover:bg-gray-900">
+                  <Avatar initials={m.initials} dark />
+                  <h3 className="mt-5 text-lg font-bold">{m.name}</h3>
+                  <p className="text-sm text-yellow-400">{m.role}</p>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-gray-400">{m.bio}</p>
+                  <ul className="mt-5 flex flex-wrap gap-1.5">
+                    {m.focus.map((f) => <li key={f} className="tag-dark">{f}</li>)}
+                  </ul>
+                </StaggerItem>
+              ))}
+            </Stagger>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">Collaboration</h4>
-              <p className="text-gray-600 text-sm">
-                We work together as one team, sharing knowledge and supporting each other.
-              </p>
-            </div>
-            
-            <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">Innovation</h4>
-              <p className="text-gray-600 text-sm">
-                We embrace new ideas and technologies to solve complex challenges.
-              </p>
-            </div>
-            
-            <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">Excellence</h4>
-              <p className="text-gray-600 text-sm">
-                We strive for excellence in everything we do, from code to client service.
-              </p>
-            </div>
-            
-            <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">Passion</h4>
-              <p className="text-gray-600 text-sm">
-                We're passionate about technology and helping businesses succeed.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Join Our Team Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-yellow-400 to-amber-400">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-black mb-6">
-            Join Our Growing Team
-          </h2>
-          <p className="text-xl text-gray-800 mb-8">
-            We're always looking for talented individuals who share our passion for innovation and excellence.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-colors">
-              View Open Positions
-            </button>
-            <button className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-3 rounded-lg font-semibold text-lg transition-colors">
-              Contact HR
-            </button>
+        {/* Values — numbered list + offices */}
+        <section className="section bg-white">
+          <div className="container-x grid gap-16 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <SectionHeading eyebrow="How we work" title="Five things every squad is held to." />
+              <ol className="mt-10 space-y-6">
+                {values.map(({ Icon, title, detail }, i) => (
+                  <Reveal key={title} delay={i * 0.05} as="li" className="group flex gap-5">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-yellow-400/15 text-yellow-700 transition-colors group-hover:bg-yellow-400 group-hover:text-black">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <h3 className="font-semibold text-gray-900">
+                        <span className="mr-2 font-mono text-xs text-gray-400">0{i + 1}</span>
+                        {title}
+                      </h3>
+                      <p className="mt-1 text-sm leading-relaxed text-gray-600">{detail}</p>
+                    </div>
+                  </Reveal>
+                ))}
+              </ol>
+            </div>
+            <Reveal delay={0.1} className="lg:col-span-5">
+              <div className="rounded-2xl border border-gray-200 bg-gray-50 p-7">
+                <p className="eyebrow mb-4">Where we are</p>
+                <ul className="divide-y divide-gray-200">
+                  {offices.map((o) => (
+                    <li key={o.city} className="py-4 first:pt-0 last:pb-0">
+                      <div className="flex items-baseline justify-between">
+                        <span className="font-semibold text-gray-900">{o.city}</span>
+                        <span className="font-mono text-[10px] uppercase tracking-wider text-gray-400">{o.label}</span>
+                      </div>
+                      <p className="mt-1 text-sm text-gray-600">{o.address}</p>
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/careers" className="link-arrow mt-6">
+                  Join one of these offices <ArrowRight />
+                </Link>
+              </div>
+            </Reveal>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center space-x-3 mb-4">
-                {/* CodeQube Logo in Footer */}
-                <div className="grid grid-cols-2 gap-1 w-8 h-8">
-                  <div className="bg-yellow-400 flex items-center justify-center">
-                    <span className="text-black font-bold text-xs">C</span>
-                  </div>
-                  <div className="bg-yellow-400 flex items-center justify-center">
-                    <span className="text-black font-bold text-xs">O</span>
-                  </div>
-                  <div className="bg-yellow-400 flex items-center justify-center">
-                    <span className="text-black font-bold text-xs">D</span>
-                  </div>
-                  <div className="bg-yellow-400 flex items-center justify-center">
-                    <span className="text-black font-bold text-xs">E</span>
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold text-yellow-400">CodeQube</h3>
-              </div>
-              <p className="text-gray-300 mb-6 max-w-md">
-                Your trusted partner for digital transformation, web development, and strategic technology consulting.
-              </p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                  </svg>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-yellow-400 transition-colors">Web Development</a></li>
-                <li><a href="#" className="hover:text-yellow-400 transition-colors">Mobile Apps</a></li>
-                <li><a href="#" className="hover:text-yellow-400 transition-colors">Digital Consulting</a></li>
-                <li><a href="#" className="hover:text-yellow-400 transition-colors">Cloud Solutions</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li><a href="/" className="hover:text-yellow-400 transition-colors">Home</a></li>
-                <li><a href="/team" className="hover:text-yellow-400 transition-colors">Our Team</a></li>
-                <li><a href="#" className="hover:text-yellow-400 transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-yellow-400 transition-colors">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} CodeQube. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-    </main>
+        <CTASection
+          eyebrow="Join us"
+          title="We hire engineers who want to own the outcome."
+          description="Open roles across backend, full stack, DevOps, cloud, data and QA. Hybrid in Brampton, Vancouver or Halifax — or remote anywhere in Canada."
+          primary={{ href: '/careers', label: 'View open positions' }}
+          secondary={{ href: '/#contact', label: 'Contact HR' }}
+        />
+      </main>
+      <Footer />
+    </>
   );
 }

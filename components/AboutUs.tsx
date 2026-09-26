@@ -1,88 +1,116 @@
 // components/AboutUs.tsx
+'use client';
 
-import { motion } from "framer-motion";
+import Link from 'next/link';
+import Reveal from './ui/Reveal';
+import Accordion from './ui/Accordion';
+import { ArrowRight, Shield, Users, Zap } from './ui/Icons';
+import { company, engagementModels } from '../lib/data/company';
+
+const milestones = [
+  { year: '2014', title: 'Founded in Brampton', detail: 'Started as a three-person web engineering studio serving Ontario SMEs.' },
+  { year: '2017', title: 'First enterprise platform', detail: 'Delivered a national retail commerce re-platform; cloud & DevOps practice formed.' },
+  { year: '2019', title: 'Vancouver office', detail: 'Opened on the West Coast to support technology and SaaS clients.' },
+  { year: '2021', title: 'Data & AI practice', detail: 'Launched data engineering and applied ML capability; first healthcare programme.' },
+  { year: '2023', title: 'Halifax office', detail: 'Expanded to Atlantic Canada; 500th project delivered.' },
+];
+
+const principles = [
+  {
+    id: 'senior',
+    Icon: Users,
+    title: 'Senior engineers, end to end',
+    content:
+      'No bait-and-switch. The architects who scope your programme are the ones who build it. Average squad experience is 9+ years and every squad is led by a principal engineer.',
+  },
+  {
+    id: 'production',
+    Icon: Zap,
+    title: 'Production from sprint one',
+    content:
+      'We stand up CI/CD, environments, observability and automated testing before feature work begins, so every increment is deployable and every demo runs on real infrastructure.',
+  },
+  {
+    id: 'ownership',
+    Icon: Shield,
+    title: 'Built for your team to own',
+    content:
+      'Architecture decision records, runbooks, and pair-programming hand-overs are part of the definition of done. Our success metric is how independently you can run the platform after we leave.',
+  },
+];
 
 export default function AboutUs() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Your Trusted Digital Transformation Partner
-            </h2>
-            <p className="text-lg text-gray-600 mb-6">
-              At CodeQube, we've been at the forefront of digital innovation for over a decade. 
-              Our team of seasoned consultants, developers, and strategists work together to deliver 
-              solutions that not only meet your immediate needs but position you for long-term success.
-            </p>
-            <p className="text-lg text-gray-600 mb-8">
-              We believe in building lasting partnerships with our clients, understanding their unique 
-              challenges, and crafting tailored solutions that drive measurable results.
-            </p>
-            
-            <div className="grid grid-cols-2 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-500 mb-2">10+</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-500 mb-2">100+</div>
-                <div className="text-sm text-gray-600">Team Members</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-500 mb-2">15+</div>
-                <div className="text-sm text-gray-600">Countries Served</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-500 mb-2">$50M+</div>
-                <div className="text-sm text-gray-600">Revenue Generated</div>
-              </div>
-            </div>
+    <section id="about" className="section bg-white">
+      <div className="container-x">
+        <div className="grid gap-16 lg:grid-cols-12">
+          {/* Left: narrative */}
+          <div className="lg:col-span-6">
+            <Reveal>
+              <p className="eyebrow mb-4">Who we are</p>
+              <h2 className="heading-lg text-gray-900">
+                A consultancy run by engineers, for organisations that need things to actually ship.
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-gray-600">
+                {company.name} was founded in {company.founded} on a simple premise: most technology programmes fail on
+                execution, not strategy. We combine the advisory depth of a large consultancy with the delivery discipline
+                of a product engineering team.
+              </p>
+              <p className="mt-4 leading-relaxed text-gray-600">
+                Today we are 100+ engineers, architects, data scientists and designers across three Canadian offices,
+                working with clients in financial services, healthcare, retail, manufacturing, logistics and the public
+                sector.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.1} className="mt-10">
+              <Accordion items={principles.map((p) => ({ id: p.id, title: p.title, content: p.content }))} defaultOpen="senior" />
+            </Reveal>
+
+            <Reveal delay={0.15} className="mt-8 flex flex-wrap gap-4">
+              <Link href="/team" className="link-arrow">
+                Meet the leadership team <ArrowRight />
+              </Link>
+              <Link href="/careers" className="link-arrow">
+                Join the team <ArrowRight />
+              </Link>
+            </Reveal>
           </div>
-          
-          <div className="space-y-6">
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-yellow-200 transition-colors">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">Proven Expertise</h3>
+
+          {/* Right: timeline + engagement models */}
+          <div className="lg:col-span-6">
+            <Reveal delay={0.1}>
+              <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6 sm:p-8">
+                <p className="eyebrow mb-6">Milestones</p>
+                <ol className="relative border-l border-gray-300 pl-6">
+                  {milestones.map((m, i) => (
+                    <li key={m.year} className={`relative ${i === milestones.length - 1 ? '' : 'pb-7'}`}>
+                      <span className="absolute -left-[31px] top-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-gray-50 bg-yellow-400">
+                        <span className="h-1.5 w-1.5 rounded-full bg-gray-900" />
+                      </span>
+                      <div className="flex flex-wrap items-baseline gap-x-3">
+                        <span className="font-mono text-xs font-semibold text-yellow-700">{m.year}</span>
+                        <h3 className="font-semibold text-gray-900">{m.title}</h3>
+                      </div>
+                      <p className="mt-1 text-sm text-gray-600">{m.detail}</p>
+                    </li>
+                  ))}
+                </ol>
               </div>
-              <p className="text-gray-600">
-                Our consultants bring deep industry knowledge and technical expertise across multiple domains.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-amber-200 transition-colors">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">Agile Delivery</h3>
+            </Reveal>
+
+            <Reveal delay={0.2} className="mt-6">
+              <p className="eyebrow mb-4">How we engage</p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {engagementModels.map((m) => (
+                  <div key={m.name} className="card card-hover group p-5">
+                    <h4 className="font-semibold text-gray-900 group-hover:text-yellow-700 transition-colors">{m.name}</h4>
+                    <p className="mt-2 text-sm leading-relaxed text-gray-600">{m.summary}</p>
+                    <p className="mt-3 font-mono text-[11px] uppercase tracking-wider text-gray-400">Best for: {m.bestFor}</p>
+                  </div>
+                ))}
               </div>
-              <p className="text-gray-600">
-                We follow proven methodologies to ensure on-time delivery and continuous improvement.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-orange-200 transition-colors">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900">Dedicated Support</h3>
-              </div>
-              <p className="text-gray-600">
-                24/7 support and maintenance to ensure your solutions run smoothly and efficiently.
-              </p>
-            </div>
+            </Reveal>
           </div>
         </div>
       </div>
